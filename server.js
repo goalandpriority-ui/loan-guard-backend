@@ -3,6 +3,8 @@ import gplay from "google-play-scraper";
 
 const app = express();
 
+const PORT = process.env.PORT || 10000;
+
 /* ROOT */
 app.get("/", (req, res) => {
   res.send("Loan Guard AI Backend Running 🚀");
@@ -25,7 +27,7 @@ app.get("/search", async (req, res) => {
   }
 });
 
-/* 🔥 NEW: FETCH REVIEWS */
+/* 🔥 FETCH REVIEWS */
 app.get("/reviews", async (req, res) => {
   const appId = req.query.appId;
 
@@ -44,4 +46,4 @@ app.get("/reviews", async (req, res) => {
   }
 });
 
-app.listen(10000, () => console.log("Server running 🚀"));
+app.listen(PORT, () => console.log("Server running 🚀"));
